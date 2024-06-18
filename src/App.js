@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Footer from './components/footer'
+import Footer from './components/Footer'
 import Home from './pages/Home';
 import Search from './pages/Search';
 import HistoricalRate from './pages/HistoricalRate';
