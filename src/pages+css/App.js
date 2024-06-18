@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from '../pages+css/Home';
@@ -18,14 +18,14 @@ const Footer = () => {
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path='/' exact component={ Home } />
-        <Route path='/search' component={ Search } />
-        <Route path='/historical-rate' component={ HistoricalRate } />
+    <div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='search' element={<Search />} />
+        <Route path='historical-rate' element={<HistoricalRate />} />
         <Route render={()=> <h1 className='text-center py-3'>404 Not Found</h1>} />
-      </Switch>
+      </Routes>
       <Footer />
-    </Router>
+    </div>
   );
 };
