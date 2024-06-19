@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavbarHome from '../components/NavbarHome'
 import { Currency } from '../components/Currency';
   
-export default function Home() {
+const Home = ()=> {
   const [ date, setDate ] = useState('');
 
   useEffect(()=> {
@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (      
-    <React.Fragment>
+    <>
       <NavbarHome />
       <div className='container'>
         <h6 className='text-center my-2'>
@@ -28,6 +28,8 @@ export default function Home() {
           <Currency />
         </ul>
       </div>
-    </React.Fragment>
+    </>
   );
 };
+
+export default Home;

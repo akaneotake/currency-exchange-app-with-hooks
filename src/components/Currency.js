@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Currencies } from './CurrencyInfo';
+import currencies from './currencyInfo';
 import { handleDragStart, handleDragEnter, handleDragOver, handleDragLeave, handleDragEnd, handleDrop } from './draggingList';
 
 import { GoTriangleDown } from "react-icons/go";
@@ -87,7 +87,7 @@ export const Currency = ()=> {
     listToHome= listToHome.filter((item) => (item !== name));
   };
 
-  return Currencies.map(({ name, longName, image })=> {
+  return currencies.map(({ name, longName, image })=> {
     // Unshown the currency which is not chosen in Search page
     const display= listToHome.includes(name)? '' : 'd-none';
     const classes= `currency-home row my-1 px-2 mx-lg-5 ${display}`;
@@ -124,7 +124,7 @@ export const ChooseCurrency = ()=> {
     };
   };
 
-  return Currencies.map(({ name, longName, image })=> {
+  return currencies.map(({ name, longName, image })=> {
     // Check the checkbox
     const checked= listToHome.includes(name)? 'checked' : '';
 

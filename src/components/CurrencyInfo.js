@@ -1,4 +1,4 @@
-export const Currencies = [
+const currencies = [
   {
     name: 'AUD',
     longName: 'Australian Dollar',
@@ -156,4 +156,4 @@ export const Currencies = [
   },
 ];
 
-// レスポンシブ確認
+export default currencies;

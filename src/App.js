@@ -8,9 +8,9 @@ import Search from './pages/Search';
 import HistoricalRate from './pages/HistoricalRate';
 import './App.css';
 
-export default function App() {
+const App = ()=> {
   return (
-    <div>
+    <>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='search' element={<Search />} />
@@ -18,6 +18,8 @@ export default function App() {
         <Route render={()=> <h1 className='text-center py-3'>404 Not Found</h1>} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 };
+
+export default App;
