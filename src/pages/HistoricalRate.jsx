@@ -3,11 +3,11 @@ import Chart from 'chart.js/auto';
 
 import NavbarHistoricalRate from '../components/NavbarHistoricalRate';
 
-export default function HistoricalRate(props) {  
+const HistoricalRate = ()=> {  
   const [ date, setDate ] = useState('');
   const chartRef = React.createRef();
 
-  const params = new URLSearchParams(props.location.search);
+  const params = new URLSearchParams(location.search);
   const base = params.get('base');
   const quote = params.get('quote');
 
@@ -46,9 +46,6 @@ export default function HistoricalRate(props) {
 
   const buildChart = (labels, data, label) => {
     chartRef.current.getContext("2d");
-    if (document.getElementById('canvas') == null) {
-      return;
-    }
 
     if (typeof window.chart !== "undefined") {
       window.chart.destroy();
@@ -74,7 +71,7 @@ export default function HistoricalRate(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <NavbarHistoricalRate />
       <div className='container'>
         <h6 className='text-center my-2'>
@@ -82,6 +79,8 @@ export default function HistoricalRate(props) {
         </h6>
         <canvas id='canvas' ref={ chartRef }></canvas>
       </div>
-    </React.Fragment>   
+    </>   
   );
 };
+
+export default HistoricalRate;
